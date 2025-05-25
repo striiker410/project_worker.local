@@ -24,16 +24,23 @@ class WorkerController extends Controller
             'description' => 'im Ivan',
             'is_married' => 'false',
         ];
-
         Worker::create($worker);
+        return 'This is create action';
 
     }
 
     function update() {
-        return 'Ivan was created';
+        $worker = Worker::find(6);
+        $worker->update([
+            'name'  => 'Justin',
+            'surname' => 'Biber',
+        ]);
+        return 'This is update action';
     }
 
     function delete() {
-        return 'This is show action';
+        $worker = Worker::find(6);
+        $worker->delete();
+        return 'This is delete action';
     }
 }
