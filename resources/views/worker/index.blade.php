@@ -8,6 +8,11 @@
 <body>
 Index page
     <hr>
+        <div>
+            <a href="{{route('worker.create')}}">Добавить</a>
+        </div>
+    <hr>
+
         @foreach($workers as $worker)
             <div>Name: {{$worker->name}}</div>
             <div>Surname: {{$worker->surname}}</div>
