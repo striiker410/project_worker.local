@@ -8,11 +8,12 @@ use App\Models\Worker;
 class WorkerController extends Controller
 {
     function index() {
-        return 'This is index action';
+        $workers = Worker::all();
+        return view('worker.index', compact('workers'));
     }
 
-    function show() {
-        return 'This is show action';
+    function show(Worker $worker) {
+        return view('worker.show', compact('worker'));
     }
 
     function create() {
